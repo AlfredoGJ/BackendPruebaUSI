@@ -26,6 +26,26 @@ namespace BackendPruebaUSI.Models
         public Guid GradoDeEstudiosId { get; set; }
         [ForeignKey("TipoDeEmpleado")]
         public Guid TipoDeEmpleadoId { get; set; }
-        public ICollection<Telefono>? Telefonos { get; set; }
+        public virtual ICollection<Telefono>? Telefonos { get; set; }
+
+        // Navigation Properties
+
+        public virtual PuestoDeTrabajo PuestoDeTrabajo { get; set; }
+        public virtual Direccion Direccion { get; set; }
+        public virtual GradoDeEstudios GradoDeEstudios { get; set; }
+        public virtual TipoDeEmpleado TipoDeEmpleado { get; set; }
+        public Empleado() { }
+        public Empleado(string nombres, string apellidoPaterno, string apellidoMaterno, int edad, bool genero, Guid puestoDeTrabajoId, Guid direccionId, Guid gradoDeEstudiosId, Guid tipoDeEmpleadoId)
+        {
+            Nombres = nombres;
+            ApellidoPaterno = apellidoPaterno;
+            ApellidoMaterno = apellidoMaterno;
+            Edad = edad;
+            Genero = genero;
+            PuestoDeTrabajoId = puestoDeTrabajoId;
+            DireccionId = direccionId;
+            GradoDeEstudiosId = gradoDeEstudiosId;
+            TipoDeEmpleadoId = tipoDeEmpleadoId;
+        }
     }
 }

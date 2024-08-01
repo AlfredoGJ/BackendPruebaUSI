@@ -23,9 +23,9 @@ namespace BackendPruebaUSI.Repositories
             return _db.Direcciones.ToList();
         }
 
-        public Direccion? GetById(Guid id)
+        public Direccion? GetByEmpleadoId(Guid empleadoId)
         {
-            return _db.Direcciones.FirstOrDefault(direccion => direccion.Id == id, null);
+            return _db.Direcciones.FirstOrDefault(direccion => direccion.Id == empleadoId, null);
         }
     }
 }

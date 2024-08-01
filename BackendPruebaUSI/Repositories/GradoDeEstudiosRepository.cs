@@ -19,7 +19,7 @@ namespace BackendPruebaUSI.Repositories
 
         public GradoDeEstudios? GetById(Guid id)
         {
-            return _db.GradosDeEstudios.FirstOrDefault(grado => grado.Id == id, null);
+            return _db.GradosDeEstudios.Find(id);
         }
     }
 }

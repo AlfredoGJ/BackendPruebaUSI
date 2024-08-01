@@ -18,7 +18,7 @@ namespace BackendPruebaUSI.Repositories
 
         public TipoDeEmpleado? GetById(Guid id)
         {
-            return _db.TiposDeEmpleado.FirstOrDefault(tipo => tipo.Id == id, null);
+            return _db.TiposDeEmpleado.Find(id);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace BackendPruebaUSI.Repositories
 
         public PuestoDeTrabajo? GetById(Guid id)
         {
-            return _db.PuestosDeTrabajo.FirstOrDefault(puesto =>  puesto.Id == id, null);
+            return _db.PuestosDeTrabajo.Find(id);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace BackendPruebaUSI.Repositories
 
         public EntidadFederativa? GetById(Guid id)
         {
-            return _db.EntidadesFederativas.FirstOrDefault(entidad=> entidad.Id == id);
+            return _db.EntidadesFederativas.Find(id);
         }
     }
 }

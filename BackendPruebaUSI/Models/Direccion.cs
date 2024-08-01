@@ -12,7 +12,20 @@ namespace BackendPruebaUSI.Models
         [Range(1, 30000)]
         public int Numero { get; set; }
         public int CodigoPostal {  get; set; }
-        public EntidadFederativa EntidadFederativa { get; set; }
+        [ForeignKey("EntidadFederativa")]
+        public Guid EntidadFederativaId {  get; set; } 
+        public virtual EntidadFederativa EntidadFederativa { get; set; }
+
+
+        public Direccion() { }
+        public Direccion(Guid id, string calle, int numero, int codigoPostal, EntidadFederativa entidad) {
+        
+            this.Id = id;
+            this.Calle = calle;
+            this.Numero = numero;
+            this.CodigoPostal = codigoPostal;
+            this.EntidadFederativa = entidad;
+        }
 
     }
 }

@@ -5,7 +5,7 @@ namespace BackendPruebaUSI.Repositories.Interfaces
     public interface ITelefonosRepository
     {
         ICollection<Telefono> GetAll();
-        ICollection<Telefono> GetByUser(Guid userId);
-        void Create(Telefono telefono);
+        //ICollection<Telefono> GetByEmpleadoId(Guid empleadoId);
+        bool Create(Telefono telefono);
     }
 }

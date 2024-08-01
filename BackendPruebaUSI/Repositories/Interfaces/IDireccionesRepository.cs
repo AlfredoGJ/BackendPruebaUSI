@@ -4,7 +4,7 @@ namespace BackendPruebaUSI.Repositories.Interfaces
     public interface IDireccionesRepository
     {
         ICollection<Direccion> GetAll();
-        Direccion? GetById(Guid userId);
+        Direccion? GetByEmpleadoId(Guid empleadoId);
         void Create(Direccion direccion);
     }
 }

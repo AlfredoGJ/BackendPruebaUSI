@@ -13,10 +13,13 @@ namespace BackendPruebaUSI.Repositories
         {
             _db = db;
         }
-        public void Create(Telefono telefono)
+        public bool Create(Telefono telefono)
         {
             _db.Telefonos.Add(telefono);
-            _db.SaveChanges();
+           var registers = _db.SaveChanges();
+            if (registers > 0)
+                return true;
+            return false;
         }
 
         public ICollection<Telefono> GetAll()
@@ -24,9 +27,9 @@ namespace BackendPruebaUSI.Repositories
             return _db.Telefonos.ToList();
         }
 
-        public ICollection<Telefono> GetByUser(Guid userId)
-        {
-            return _db.Telefonos.Include(telefono => telefono.Empleado).Where(telefono => telefono.Empleado.Id == userId).ToList();
-        }
+        //public ICollection<Telefono> GetByEmpleadoId(Guid userId)
+        //{
+        //    return _db.Telefonos.Include(telefono => telefono.Empleado).Where(telefono => telefono.Empleado.Id == userId).ToList();
+        //}
     }
 }

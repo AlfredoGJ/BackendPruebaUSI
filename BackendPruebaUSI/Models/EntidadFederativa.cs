@@ -9,6 +9,5 @@ namespace BackendPruebaUSI.Models
         [Required]
         [MaxLength(32)]
         public string Nombre { get; set; }
-        public ICollection< Direccion>? Direcciones { get; set; }
     }
 }
